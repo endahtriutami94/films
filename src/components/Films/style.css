@@ -1,0 +1,20 @@
+.films {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  -webkit-padding-start: 0;
+}
+
+.films li {
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+}
+
+.films li:hover {
+  background: #ddd;
+  color: #fff;
+}

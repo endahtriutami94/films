@@ -11,13 +11,11 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const routes = <routes />;
-    console.log('routes: ', routes);
     return (
       <HashRouter>
         <div className="App">
           <div className="container">
-            <ul>
+            <ul className="navbar">
               <li><NavLink to="/films">Films</NavLink></li>
               <li><NavLink to="/planets">Planets</NavLink></li>
             </ul>

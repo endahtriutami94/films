@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EachFilm from './EachFilm';
+import './style.css';
 
 class Films extends Component {
   constructor(props) {
@@ -21,6 +22,10 @@ class Films extends Component {
   componentDidMount() {
     this.setState({ isLoadingPeople: true });
     this.getPeople();
+  }
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log('url: ', window.location.href);
   }
 
   getPeople = () => {
@@ -78,14 +83,16 @@ class Films extends Component {
     if(isLoadingPeople || isLoadingEachFilm) {
       return <p>Loading...</p>;
     }
-
+    console.log('films: ', people);
     return (
       <React.Fragment>
       <p>Films</p>
-      <ul>
+      <ul className="films">
         { !showFilm && (
           people.map((item, index) => (
-            <li key={index} onClick={e => this.seeMore(e, index + 1)}>{item.name}</li>
+            <li key={index} onClick={e => this.seeMore(e, index + 1)}>
+              {item.name}
+            </li>
           ))
         )}
       </ul>
